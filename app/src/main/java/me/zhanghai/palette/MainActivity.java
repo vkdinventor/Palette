@@ -122,8 +122,8 @@ public class MainActivity extends ActionBarActivity implements Palette.PaletteAs
     public void onGenerated(Palette palette) {
         int transparent = getResources().getColor(android.R.color.transparent);
         int vibrant = palette.getVibrantColor(transparent);
-        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(vibrant));
-        systemBarTintManager.setTintColor(vibrant);
+        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(palette.getDarkVibrantColor(transparent)));
+        systemBarTintManager.setTintColor(palette.getDarkVibrantColor(transparent));
         vibrantView.setBackgroundColor(vibrant);
         vibrantLightView.setBackgroundColor(palette.getLightVibrantColor(transparent));
         vibrantDarkView.setBackgroundColor(palette.getDarkVibrantColor(transparent));
